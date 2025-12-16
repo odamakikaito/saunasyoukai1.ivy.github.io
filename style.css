@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+.hero {
+  background-image: url("d3ad8a25-b2c5-4459-b562-d75cdf4b8295.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒フィルター */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+.nav li {
+  margin-left: 1rem;
+}
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+}
+.main-visual {
+  height: 400px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: none;
+}
+.works {
+  padding: 2rem;
+  text-align: left;
+}
+.work-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+.work-item {
+  width: 100%;
+  margin-bottom: 1rem;       
+  padding: 16px;
+  border-bottom: 1px solid #d39a26;
+  box-sizing: border-box;
+}
+.thumb {
+  background: #e778183c;
+  height: auto;
+  margin-bottom: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .work-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .work-item {
+    width: 80%;
+  }
+}

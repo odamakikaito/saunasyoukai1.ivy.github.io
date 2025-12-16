@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>トップページ</title>
+
+  <style>
+    /* ベースデザイン */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      background: #fff;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* =========================
+       ヒーロー（自動スライド）
+       ========================= */
+    .hero {
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* サウナ一覧 */
+    .works {
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .work-item {
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .thumb {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* 動画 */
+    iframe {
+      width: 560px;
+      height: 315px;
+      max-width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* =========================
+       レスポンシブ
+       ========================= */
+    @media (max-width: 900px) {
+      .work-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        height: 35vh;
+      }
+
+      .work-list {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      iframe {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">サウナ</div>
+      <div class="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ヒーロー画像スライダー -->
+    <section class="hero">
+      <div class="hero-slides">
+        <img src="image/kositu.jpg" alt="">
+        <img src="images/mizu.jpg" alt="">
+        <img src="images/soto.jpg" alt="">
+        <img src="images/toyonokuni_10.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="works">
+      <h2>サウナの種類</h2>
+      <div class="work-list">
+        <div class="work-item">
+          <div class="thumb">ドライサウナ</div>
+          <p>温度は80~100度、湿度は10~20%。高温で乾燥しているため肌や髪のケアが必要。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">スチームサウナ</div>
+          <p>温度は40~60度、湿度は80~100%。息苦しさが少なく長時間楽しめる。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">ミストサウナ</div>
+          <p>スチームと似ているが、霧状の水分を使うのが特徴。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">コールドサウナ</div>
+          <p>マイナス20~10度。水風呂が苦手な人向け。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">ロウリュウサウナ</div>
+          <p>サウナストーンに水をかけ蒸気を発生させる。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="works">
+      <h3>サウナに入るときのマナー</h3>
+      <div class="work-list">
+        <div class="work-item">
+          <div class="thumb">髪と体を洗う</div>
+          <p>清潔を保ち、汗をかきやすくする。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">体の水気を拭く</div>
+          <p>汗をかきやすくするため。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">静かにする</div>
+          <p>音が響きやすいため。</p>
+        </div>
+        <div class="work-item">
+          <div class="thumb">汗を流して水風呂へ</div>
+          <p>他の利用者への配慮。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="video-section" style="text-align:center; padding:40px 0;">
+    <h3>サウナ紹介動画</h3>
+    <iframe
+      src="https://www.youtube.com/embed/BwXoAYnigFM"
+      title="YouTube video player"
+      frameborder="0"
+      allowfullscreen></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 sauna</p>
+  </footer>
+
+  <!-- 自動スライドJS -->
+  <script>
+    let index = 0;
+    const slides = document.querySelector('.hero-slides');
+    const slideCount = slides.children.length;
+
+    setInterval(() => {
+      index++;
+      if (index >= slideCount) {
+        index = 0;
+      }
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }, 4000);
+  </script>
+</body>
+</html>
