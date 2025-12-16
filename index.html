@@ -5,114 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>トップページ</title>
 
-  <style>
-    /* ===== ベース ===== */
-    body {
-      margin: 0;
-      font-family: sans-serif;
-    }
-
-    header {
-      background: #fff;
-      padding: 10px 0;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .container {
-      width: 90%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    /* ===== ヒーロースライダー ===== */
-    .hero {
-      width: 100%;
-      height: 50vh;
-      overflow: hidden;
-    }
-
-    .hero-slides {
-      display: flex;
-      height: 100%;
-      transition: transform 0.6s ease;
-    }
-
-    .hero-slides img {
-      min-width: 100%;
-      height: 100%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    /* ===== サウナ一覧 ===== */
-    .works {
-      width: 90%;
-      margin: 40px auto;
-    }
-
-    .work-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .work-item {
-      background: #fafafa;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-    .thumb {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    /* ===== 動画 ===== */
-    iframe {
-      width: 560px;
-      height: 315px;
-      max-width: 100%;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* ===== レスポンシブ ===== */
-    @media (max-width: 900px) {
-      .work-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero {
-        height: 35vh;
-      }
-
-      .work-list {
-        grid-template-columns: 1fr;
-      }
-
-      iframe {
-        height: 200px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -123,76 +16,111 @@
   </header>
 
   <main>
-    <!-- ===== ヒーロー画像スライダー ===== -->
+    <!-- ===== ヒーロー ===== -->
     <section class="hero">
       <div class="hero-slides" id="heroSlides">
         <img src="images/kositu.jpg" alt="">
         <img src="images/mizu.jpg" alt="">
         <img src="images/soto.jpg" alt="">
         <img src="images/toyonokuni_8.jpg" alt="">
-        <!-- ループ用：1枚目を複製 -->
-        <img src="image/kositu.jpg" alt="">
+        <img src="images/kositu.jpg" alt="">
       </div>
     </section>
 
     <!-- ===== サウナの種類 ===== -->
     <section class="works">
       <h2>サウナの種類</h2>
+
       <div class="work-list">
         <div class="work-item">
           <div class="thumb">ドライサウナ</div>
-          <p>温度は80~100度、湿度は10~20%。</p>
+          <p>温度は80〜100度、湿度は10〜20%となっている。温度が高温なため息苦しさを感じることがある。湿度が低く乾燥している。髪の毛や肌のケアが必要。</p>
         </div>
+
         <div class="work-item">
           <div class="thumb">スチームサウナ</div>
-          <p>温度は40~60度、湿度は80~100%。</p>
+          <p>温度は40〜60度、湿度は80〜100%となっている。ドライサウナに比べて息苦しさがなく楽に長時間楽しめる。</p>
         </div>
+
         <div class="work-item">
           <div class="thumb">ミストサウナ</div>
-          <p>霧状の水分を使う。</p>
+          <p>温度や湿度はスチームサウナとあまり変わらない。ミストサウナとスチームサウナの違いは主に物質的な違いで、「気体」か「液体」の違いである。</p>
         </div>
+
         <div class="work-item">
           <div class="thumb">コールドサウナ</div>
-          <p>マイナス20~10度。</p>
+          <p>コールドサウナはサウナで温まった体を冷やすためのサウナで、温度はマイナス20~10度となっている。水風呂が苦手な人におすすめ。</p>
         </div>
         <div class="work-item">
           <div class="thumb">ロウリュウサウナ</div>
-          <p>蒸気を発生させる。</p>
-        </div>
+          <p>ロウリュウはサウナストーンに水をかけ、サウナ内に熱い蒸気を充満させる。ドライサウナに比べて温度が低く、湿度が高いため息苦しさを感じずに楽しめる。</p>
       </div>
     </section>
 
     <!-- ===== マナー ===== -->
     <section class="works">
-      <h3>サウナに入るときのマナー</h3>
+      <h2>サウナに入るときのマナー</h2>
+
       <div class="work-list">
         <div class="work-item">
           <div class="thumb">髪と体を洗う</div>
-          <p>清潔を保つ。</p>
+          <p>髪と体を洗うことでサウナ室内を清潔に保つことができ、さらに汗をかきやすくなるためより整うことができます。</p>
         </div>
+
         <div class="work-item">
           <div class="thumb">体の水気を拭く</div>
-          <p>汗をかきやすくする。</p>
+          <p>サウナ室に入る前は体の水気をタオルなどで拭き取りましょう。水気が残っていると汗をかくよりも先に水分の蒸発が優先され、汗をかきずらくなります。</p>
         </div>
+
         <div class="work-item">
-          <div class="thumb">静かにする</div>
-          <p>周囲への配慮。</p>
+          <div class="thumb">サウナ室内では静かにする</div>
+          <p>サウナ室内は密閉されており、音が響くため声がより大きく聞こえる。そのため抑えてるつもりでも不快に思う人が多くいる。</p>
         </div>
+
         <div class="work-item">
           <div class="thumb">汗を流して水風呂へ</div>
-          <p>マナーを守る。</p>
+          <p>水風呂もほかの利用者が使用するので汗を流して入ることが一般的です。</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== 商品一覧 ===== -->
+    <section class="products">
+      <h2>おすすめ商品</h2>
+
+      <div class="product-list">
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%B5%E3%82%A6%E3%83%8A%E6%99%82%E8%A8%88&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=R5CJD4PD831V&sprefix=%E3%82%B5%E3%82%A6%E3%83%8A%E6%99%82%E8%A8%88%2Caps%2C186&ref=nb_sb_noss_2" class="product-item">
+          <img src="images/suna.webp" alt="">
+          <p class="product-name">サウナ時計</p>
+          <p class="product-price">¥1,580</p>
+        </a>
+
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%B5%E3%82%A6%E3%83%8A+%E3%81%AF%E3%81%A3%E3%81%A8&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=113SJMQ7JRVI5&sprefix=%E3%82%B5%E3%82%A6%E3%83%8A+%E3%81%AF%E3%81%A3%E3%81%A8%2Caps%2C219&ref=nb_sb_noss_2" class="product-item">
+          <img src="images/hatto.jpg" alt="">
+          <p class="product-name">サウナハット</p>
+          <p class="product-price">¥3,790</p>
+        </a>
+
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%B5%E3%82%A6%E3%83%8A%E3%82%AD%E3%83%BC%E3%83%9B%E3%83%AB%E3%83%80&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=3IXPBJ6ZHWYRG&sprefix=%E3%82%B5%E3%82%A6%E3%83%8A%E3%82%AD%E3%83%BC%E3%83%9B%E3%83%AB%E3%83%80%2Caps%2C206&ref=nb_sb_noss_2" class="product-item">
+          <img src="images/ki.webp" alt="">
+          <p class="product-name">キーホルダー</p>
+          <p class="product-price">¥1,500</p>
+        </a>
+
+        <a href="https://www.amazon.co.jp/s?k=%E3%82%B5%E3%82%A6%E3%83%8A%E3%83%9D%E3%83%BC%E3%83%81&__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=2TI3P4RHL3U53&sprefix=%E3%82%B5%E3%82%A6%E3%83%8A%E3%83%9D%E3%83%BC%E3%83%81%2Caps%2C228&ref=nb_sb_noss_1" class="product-item">
+          <img src="images/poti.webp" alt="">
+          <p class="product-name">サウナポーチ</p>
+          <p class="product-price">¥3,465</p>
+        </a>
       </div>
     </section>
   </main>
 
   <!-- ===== 動画 ===== -->
-  <section style="text-align:center; padding:40px 0;">
+  <section class="video">
     <h3>サウナ紹介動画</h3>
     <iframe
       src="https://www.youtube.com/embed/BwXoAYnigFM"
-      title="YouTube video player"
-      frameborder="0"
       allowfullscreen></iframe>
   </section>
 
@@ -200,27 +128,25 @@
     <p>&copy; 2025 sauna</p>
   </footer>
 
-  <!-- ===== 自動スライドJS ===== -->
+  <!-- ===== スライドJS ===== -->
   <script>
-    const slides = document.getElementById('heroSlides');
-    const total = slides.children.length;
+    const slides = document.getElementById("heroSlides");
+    const slideCount = slides.children.length;
     let index = 0;
 
     setInterval(() => {
       index++;
+      slides.style.transition = "transform 0.6s ease";
       slides.style.transform = `translateX(-${index * 100}%)`;
 
-      // 最後（複製）に来たら自然に1枚目へ
-      if (index === total - 1) {
+      if (index === slideCount - 1) {
         setTimeout(() => {
-          slides.style.transition = 'none';
+          slides.style.transition = "none";
           index = 0;
-          slides.style.transform = 'translateX(0)';
-          slides.offsetHeight; // 強制再描画
-          slides.style.transition = 'transform 0.6s ease';
+          slides.style.transform = "translateX(0)";
         }, 600);
       }
-    }, 3500); // ← 速度調整
+    }, 3500);
   </script>
 </body>
 </html>
