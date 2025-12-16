@@ -6,7 +6,7 @@
   <title>トップページ</title>
 
   <style>
-    /* ベースデザイン */
+    /* ===== ベース ===== */
     body {
       margin: 0;
       font-family: sans-serif;
@@ -31,37 +31,27 @@
       font-weight: bold;
     }
 
-    .hamburger {
-      font-size: 26px;
-      cursor: pointer;
-      display: none;
-    }
-
-    /* =========================
-       ヒーロー（自動スライド）
-       ========================= */
+    /* ===== ヒーロースライダー ===== */
     .hero {
       width: 100%;
       height: 50vh;
       overflow: hidden;
-      position: relative;
     }
 
     .hero-slides {
       display: flex;
-      width: 300%;
       height: 100%;
       transition: transform 0.6s ease;
     }
 
     .hero-slides img {
-      width: 100%;
+      min-width: 100%;
       height: 100%;
       object-fit: cover;
       flex-shrink: 0;
     }
 
-    /* サウナ一覧 */
+    /* ===== サウナ一覧 ===== */
     .works {
       width: 90%;
       margin: 40px auto;
@@ -86,7 +76,7 @@
       margin-bottom: 10px;
     }
 
-    /* 動画 */
+    /* ===== 動画 ===== */
     iframe {
       width: 560px;
       height: 315px;
@@ -98,15 +88,10 @@
       padding: 20px;
     }
 
-    /* =========================
-       レスポンシブ
-       ========================= */
+    /* ===== レスポンシブ ===== */
     @media (max-width: 900px) {
       .work-list {
         grid-template-columns: repeat(2, 1fr);
-      }
-      .hamburger {
-        display: block;
       }
     }
 
@@ -119,12 +104,12 @@
         grid-template-columns: 1fr;
       }
 
-      .logo {
-        font-size: 20px;
-      }
-
       iframe {
         height: 200px;
+      }
+
+      .logo {
+        font-size: 20px;
       }
     }
   </style>
@@ -134,71 +119,75 @@
   <header>
     <div class="container">
       <div class="logo">サウナ</div>
-      <div class="hamburger">&#9776;</div>
     </div>
   </header>
 
   <main>
-    <!-- ヒーロー画像スライダー -->
+    <!-- ===== ヒーロー画像スライダー ===== -->
     <section class="hero">
-      <div class="hero-slides">
-        <img src="image/kositu.jpg" alt="">
+      <div class="hero-slides" id="heroSlides">
+        <img src="images/kositu.jpg" alt="">
         <img src="images/mizu.jpg" alt="">
         <img src="images/soto.jpg" alt="">
-        <img src="images/toyonokuni_10.jpg" alt="">
+        <img src="images/toyonokuni_8.jpg" alt="">
+        <!-- ループ用：1枚目を複製 -->
+        <img src="image/kositu.jpg" alt="">
       </div>
     </section>
 
+    <!-- ===== サウナの種類 ===== -->
     <section class="works">
       <h2>サウナの種類</h2>
       <div class="work-list">
         <div class="work-item">
           <div class="thumb">ドライサウナ</div>
-          <p>温度は80~100度、湿度は10~20%。高温で乾燥しているため肌や髪のケアが必要。</p>
+          <p>温度は80~100度、湿度は10~20%。</p>
         </div>
         <div class="work-item">
           <div class="thumb">スチームサウナ</div>
-          <p>温度は40~60度、湿度は80~100%。息苦しさが少なく長時間楽しめる。</p>
+          <p>温度は40~60度、湿度は80~100%。</p>
         </div>
         <div class="work-item">
           <div class="thumb">ミストサウナ</div>
-          <p>スチームと似ているが、霧状の水分を使うのが特徴。</p>
+          <p>霧状の水分を使う。</p>
         </div>
         <div class="work-item">
           <div class="thumb">コールドサウナ</div>
-          <p>マイナス20~10度。水風呂が苦手な人向け。</p>
+          <p>マイナス20~10度。</p>
         </div>
         <div class="work-item">
           <div class="thumb">ロウリュウサウナ</div>
-          <p>サウナストーンに水をかけ蒸気を発生させる。</p>
+          <p>蒸気を発生させる。</p>
         </div>
       </div>
     </section>
 
+    <!-- ===== マナー ===== -->
     <section class="works">
       <h3>サウナに入るときのマナー</h3>
       <div class="work-list">
         <div class="work-item">
           <div class="thumb">髪と体を洗う</div>
-          <p>清潔を保ち、汗をかきやすくする。</p>
+          <p>清潔を保つ。</p>
         </div>
         <div class="work-item">
           <div class="thumb">体の水気を拭く</div>
-          <p>汗をかきやすくするため。</p>
+          <p>汗をかきやすくする。</p>
         </div>
         <div class="work-item">
           <div class="thumb">静かにする</div>
-          <p>音が響きやすいため。</p>
+          <p>周囲への配慮。</p>
         </div>
         <div class="work-item">
           <div class="thumb">汗を流して水風呂へ</div>
-          <p>他の利用者への配慮。</p>
+          <p>マナーを守る。</p>
         </div>
       </div>
     </section>
   </main>
 
-  <section class="video-section" style="text-align:center; padding:40px 0;">
+  <!-- ===== 動画 ===== -->
+  <section style="text-align:center; padding:40px 0;">
     <h3>サウナ紹介動画</h3>
     <iframe
       src="https://www.youtube.com/embed/BwXoAYnigFM"
@@ -211,19 +200,27 @@
     <p>&copy; 2025 sauna</p>
   </footer>
 
-  <!-- 自動スライドJS -->
+  <!-- ===== 自動スライドJS ===== -->
   <script>
+    const slides = document.getElementById('heroSlides');
+    const total = slides.children.length;
     let index = 0;
-    const slides = document.querySelector('.hero-slides');
-    const slideCount = slides.children.length;
 
     setInterval(() => {
       index++;
-      if (index >= slideCount) {
-        index = 0;
-      }
       slides.style.transform = `translateX(-${index * 100}%)`;
-    }, 4000);
+
+      // 最後（複製）に来たら自然に1枚目へ
+      if (index === total - 1) {
+        setTimeout(() => {
+          slides.style.transition = 'none';
+          index = 0;
+          slides.style.transform = 'translateX(0)';
+          slides.offsetHeight; // 強制再描画
+          slides.style.transition = 'transform 0.6s ease';
+        }, 600);
+      }
+    }, 3500); // ← 速度調整
   </script>
 </body>
 </html>
